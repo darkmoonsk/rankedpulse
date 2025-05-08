@@ -1,0 +1,91 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## 1. Visão Geral
+
+O **Ranked Pulse** é uma plataforma SaaS voltada para proprietários de sites, blogueiros e pequenas empresas que precisam de relatórios rápidos e fáceis de entender sobre SEO, performance e acessibilidade. Com uma interface intuitiva, o usuário submete suas URLs e recebe, em segundos, uma análise completa que ajuda a otimizar seu site para mecanismos de busca e melhorar a experiência do usuário.
+
+---
+
+## 2. Objetivos do Projeto
+
+* **Democratizar o acesso** a auditorias técnicas, oferecendo versão gratuita para até 5 análises mensais.
+* **Fornecer insights acionáveis**, com recomendações claras e priorizadas.
+* **Escalar de forma eficiente**, suportando crescimento de tráfego e número de clientes sem grande sobrecarga operacional.
+* **Gerar receita recorrente** via planos pagos, atendendo desde usuários iniciantes até agências e consultores.
+
+---
+
+## 3. Público-Alvo
+
+* **Blogueiros e criadores de conteúdo** que desejam melhorar posicionamento no Google.
+* **Pequenas empresas e lojas online** com equipe técnica limitada.
+* **Agências digitais** que precisam de relatórios rápidos para clientes.
+* **Freelancers e consultores** de marketing digital que buscam ferramenta leve e focada.
+
+---
+
+## 4. Escopo e Funcionalidades Principais
+
+| Domínio                 | Funcionalidade MVP                                           |
+| ----------------------- | ------------------------------------------------------------ |
+| **Usuário & Auth**      | Cadastro/login, gestão de perfil e sessões                   |
+| **Gestão de URLs**      | Submissão de URLs, lista de monitoradas, limites freemium    |
+| **Motor de Análise**    | Integração com PageSpeed Insights API; checks básicos de SEO |
+| **Dashboard**           | Scores por categoria; recomendações; gráficos de tendências  |
+| **Exportação**          | Download de PDF; link público de relatório                   |
+| **Planos & Pagamentos** | Freemium; Stripe para upgrade; aplicação de cotas            |
+| **Infra & Operação**    | Deploy serverless; banco gerenciado; monitoramento de cota   |
+
+---
+
+## 5. Arquitetura Técnica
+
+1. **Frontend**
+
+   * **Next.js**: SSR e rotas de API integradas
+   * **Tailwind CSS**: estilização responsiva e modular
+   * **React Charts**: visualização de dados
+2. **Backend / API**
+
+   * **Node.js** (Next API Routes ou serviço separado)
+   * **PageSpeed Insights API**: avalia performance e acessibilidade
+   * **Checks SEO customizados** em JavaScript
+3. **Banco de Dados**
+
+   * **PostgreSQL** com **Prisma ORM**
+   * Tabelas: `User`, `URL`, `Analysis`, `Plan`, `Payment`
+4. **Autenticação**
+
+   * **Clerk** ou **Auth.js** para flows prontos
+5. **Pagamentos**
+
+   * **Stripe**: checkout, webhooks (cobranças, faturas)
+6. **Infraestrutura**
+
+   * Frontend no **Vercel** (CI/CD automático)
+   * Backend e DB no **Railway** ou **Supabase**
+   * Logs e monitoramento via **Sentry** ou **Logflare**
+
+---
+
+## 6. Roadmap de Entrega
+
+| Fase     | Atividades Principais                                                                   | Duração Estimada |
+| -------- | --------------------------------------------------------------------------------------- | ---------------- |
+| **MVP**  | Setup repo, Auth, formulário de URL, integração PageSpeed, scores básicos, exportar PDF | 3 semanas        |
+| **v1.1** | SEO checks aprofundados, histórico de análises, link público                            | 2 semanas        |
+| **v1.2** | Planos pagos com Stripe, limites freemium, área de cobrança                             | 2 semanas        |
+| **v1.3** | Filtros avançados, notificações por e-mail, dashboard personalizável                    | 3 semanas        |
+
+---
+
+## 7. Indicadores de Sucesso (KPIs)
+
+* **Número de usuários ativos mensais** (MAU)
+* **Taxa de upgrade do freemium ao pago**
+* **Tempo médio de análise por URL** (< 5 s)
+* **Satisfação do usuário** (NPS > 40)
+

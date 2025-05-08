@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Authentication with Clerk
+
+This project uses [Clerk](https://clerk.com) for authentication. To use Clerk, you'll need to:
+
+1. Create a Clerk account and project
+2. Create a `.env.local` file in the root of your project with the following variables:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_PUBLISHABLE_KEY
+CLERK_SECRET_KEY=sk_test_YOUR_SECRET_KEY
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/register
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+```
+
+Replace `YOUR_PUBLISHABLE_KEY` and `YOUR_SECRET_KEY` with the keys from your Clerk dashboard.
+
 ## Getting Started
 
 First, run the development server:
